@@ -3,7 +3,11 @@ package main
 import (
 	"fmt"
 	"log"
-	"GoBlockchain/field"
+	//"strings"
+	//"GoBlockchain/field"
+	"GoBlockchain/point"
+	"GoBlockchain/curve"
+	//"math/big"
 )
 
 func init() {
@@ -11,7 +15,9 @@ func init() {
 }
 
 func main() {
-	fe := field.NewFieldElement("12", "13", "d")
-	fmt.Println(fe)
+	var p1 point.Point
+	p1.ScalarMul(&SECP256K1.G, &SECP256K1.N)
+	fmt.Println(p1.String(10))
+
 	
 }
